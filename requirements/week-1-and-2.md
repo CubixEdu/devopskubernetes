@@ -10,7 +10,7 @@ For the first and second week’s exercises the following steps must be done bef
 * Install a Git graphical user interface - recommended one is GitHub Desktop, as I will use that during the exercises (https://desktop.github.com/)
   * Note that GitHub Desktop is only available on Windows and MacOS, for Linux you will have to choose a different GUI, see: https://git-scm.com/downloads/guis
   * With GitHub Desktop you can log in to your GitHub account, making authentication easier
-* Install Java Development Kit 17 or higher (https://adoptium.net/download/)
+* Install Java Development Kit 21 (higher is not recommended) (https://adoptium.net/download/)
 * Add the java command-line tool to the PATH if it was not done by the installer
   * The folder to add: <path of the installation>/bin
 * Add JAVA_HOME as a global level environment variable pointing to the Java installation folder (<path of the installation>)
@@ -66,7 +66,7 @@ These steps should be done by you before starting the exercises - if these will 
 * Create a folder where you will work.
 * Enter a terminal / command-line prompt to that folder
 * Enter the following command: `java -version`
-  * It should return something like this: `openjdk version "17.0.5" 2022-10-18` what matters is that it does not show any error, and the first number in the version is 17 or higher
+  * It should return something like this: `openjdk version "21.0.2" 2024-01-16 LTS` what matters is that it does not show any error, and the first number in the version starts with 21 (or higher)
   * If this fails, it means your Java installation is not correct, or java is not added to the PATH
 * Enter the following command: `git clone https://github.com/drsylent/cubix-cloudnative-example-springboot`
   * It should not show any errors

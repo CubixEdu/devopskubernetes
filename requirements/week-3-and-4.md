@@ -1,9 +1,9 @@
 # Requirements
 For the third week’s exercises the following steps must be done before the start:
 * Install the kubectl CLI tool and add it to the PATH
-  * If you installed Docker Desktop on Windows, probably you already have it installed and added to the PATH - see check section to see if this is the case for you
+  * If you installed Docker Desktop on Windows or MacOS, probably you already have it installed and added to the PATH - see check section to see if this is the case for you
   * If not, you can download it from here: https://kubernetes.io/docs/tasks/tools/#kubectl - follow the instructions for your operating system
-  * Do not forget to add it to the PATH - the name of the executable must be `kubectl`
+  * Do not forget to add it to the PATH - the name of the executable must be `kubectl` (or `kubectl.exe` in case of Windows)
 * Install the kind CLI tool and add it to the PATH
   * Follow one of the instructions listed here that seems good for you: https://kind.sigs.k8s.io/docs/user/quick-start/#installation
   * The release binaries can be the simplest way if you do not have any package managers: https://kind.sigs.k8s.io/docs/user/quick-start/#installing-from-release-binaries
@@ -77,3 +77,13 @@ How to modify the PATH on your machine:
 * Windows: go to the same window as with the environment variables and modify the account level PATH variable
   * Add a new entry here: <img src='/requirements/img/1-path.png' width='400'>
 * Linux and MacOS: do an environment variable setting as previously, and add something new to the path like this: `export PATH="$PATH:<path to add>"`
+
+# Versions notes
+
+Versions can be important for Kubernetes related executables. Here are the versions that I used last time, as a reference.
+Even if it is different from what you may have downloaded, hopefully there will not be any problems.
+
+* Kubectl (comes from Docker Desktop) (`kubectl version --client`): Client Version: v1.29.1
+* Built-in Kustomize (comes from `kubectl`) (`kubectl version --client`): Kustomize Version: v5.0.4-0.20230601165947-6ce0bf390ce3
+* Kind (`kind version`): kind v0.22.0 go1.20.13
+* Helm (`helm version`): version.BuildInfo{Version:"v3.14.2", GitCommit:"c309b6f0ff63856811846ce18f3bdc93d2b4d54b", GitTreeState:"clean", GoVersion:"go1.21.7"}

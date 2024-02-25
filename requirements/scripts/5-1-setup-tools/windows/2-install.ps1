@@ -1,6 +1,9 @@
 kubectl create ns tools
-helm upgrade --install prometheus prometheus-community/kube-prometheus-stack --version 41.7.0 -f ../prometheus.yaml -n tools
-helm upgrade --install loki grafana/loki -f ../loki.yaml --version 4.6.1 -n tools
-helm upgrade --install promtail grafana/promtail --set "config.clients[0].url=http://loki:3100/loki/api/v1/push" --version 6.8.3 -n tools
-helm upgrade --install tempo grafana/tempo -f ../tempo.yaml --version 1.0.0 -n tools
-kubectl apply -f ../grafana.yaml -n tools
+kubectl create configmap grafana-datasources --from-file=../datasources.yaml -n tools
+kubectl label cm/grafana-datasources grafana_datasource=true -n tools
+kubectl create secret generic grafana-admin-login --from-literal=user=admin --from-literal=password=admin -n tools
+helm install prometheus prometheus-community/kube-prometheus-stack -f ../prometheus.yaml --version 56.9.0 -n tools
+helm install promtail grafana/promtail -f ../promtail.yaml --version 6.15.5 -n tools
+helm install loki grafana/loki -f ../loki.yaml --version 5.43.3 -n tools
+helm install tempo grafana/tempo -f ../tempo.yaml --version 1.7.2 -n tools
+helm install grafana grafana/grafana -f ../grafana.yaml --version 7.3.2 -n tools
