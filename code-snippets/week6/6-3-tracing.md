@@ -1,7 +1,7 @@
 # Add OpenTelemetry agent to Docker image
 
 ```dockerfile
-ADD --chown=1001 https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/download/v1.20.2/opentelemetry-javaagent.jar opentelemetry.jar
+ADD --chown=1001 https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/download/v1.33.0/opentelemetry-javaagent.jar opentelemetry.jar
 ```
 
 # Use OpenTelemetry agent
