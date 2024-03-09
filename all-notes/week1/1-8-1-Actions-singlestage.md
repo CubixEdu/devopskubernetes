@@ -28,7 +28,7 @@ Set up caching:
 
 ```yaml
       with:
-        java-version: '17'
+        java-version: '21'
         distribution: 'temurin'
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         cache: 'maven'

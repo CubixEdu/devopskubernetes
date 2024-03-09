@@ -135,7 +135,7 @@ BEFOREHAND: change the line endings for Linux.
 Dockerfile-multistage should be based on the Dockerfile-aftermaven:
 
 ```Dockerfile
-FROM eclipse-temurin:17 AS builder
+FROM eclipse-temurin:21 AS builder
 
 RUN mkdir /opt/build
 WORKDIR /opt/build
@@ -145,7 +145,7 @@ COPY mvnw .
 COPY pom.xml .
 RUN ./mvnw clean verify
 
-FROM eclipse-temurin:17-jre
+FROM eclipse-temurin:21-jre
 RUN mkdir /opt/app && chown 1001 -R /opt/app
 USER 1001
 WORKDIR /opt/app
