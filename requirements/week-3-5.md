@@ -33,7 +33,7 @@ For the third week’s exercises the following steps must be done before the sta
   * You should get a line something like this: `kind v0.17.0 go1.19.3 windows/amd64` (the version may differ)
   * If this fails, it means your kind installation is not correct, or kind is not added to the PATH
 * Enter the following command: `helm version`
-  * You should get a line which starts with `version.BuildInfo`
+  * You should get a line which starts with `version.BuildInfo`. It should be a version number starting with `v3` (the release I linked should have `v3.19.2`)
   * If this fails, it means your helm installation is not correct, or helm is not added to the PATH
 * Check the contents of the hosts file
   * On Windows (with PowerShell): `cat C:\Windows\System32\drivers\etc\hosts`
