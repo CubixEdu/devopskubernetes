@@ -55,13 +55,15 @@ Add their repository to our known ones: `helm repo add bitnami https://charts.bi
 For each chart, it is a legit question: how can we customize it, what kind of values can we set?
 For this Chart: https://github.com/bitnami/charts/tree/main/bitnami/postgresql/ - or we can use the CLI: `helm show values bitnami/postgresql`
 
-Create a separate folder, and put in a values.yaml file. We can see, that the auth part is the most important, we have to fill:
+Create a separate folder, and put in a values.yaml file. We can see, that the auth part is the most important, we have to fill. **Also the image repository must be changed, due to a change what Bitnami did to their repositories**:
 
 ```yaml
 auth:
   username: user
   password: password
   database: postgres
+image:
+    repository: bitnamilegacy/postgresql
 ```
 
 Create a dedicated namespace for the database: `kubectl create namespace helm-db`
@@ -303,6 +305,8 @@ postgresql:
     username: user
     password: password
     database: postgres
+  image:
+    repository: bitnamilegacy/postgresql
 ```
 
 The deployment.yaml must be modified, we will not have the db values, 
