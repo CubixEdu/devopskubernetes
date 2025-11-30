@@ -32,6 +32,16 @@ https://charts.bitnami.com/bitnami
 
 https://github.com/bitnami/charts/tree/main/bitnami/postgresql/
 
+# Configuring Bitnami image
+
+This is required, as old Bitnami images have been migrated.
+
+```yaml
+postgresql:
+  image:
+    repository: bitnamilegacy/postgresql
+```
+
 # DB image values
 
 ```yaml

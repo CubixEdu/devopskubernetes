@@ -86,3 +86,23 @@ patches:
     kind: Ingress
     name: example
 ```
+
+## Labeling with kustomization.yaml file
+
+Previously we used `commonLabels` for applying labels to all resources:
+
+```yaml
+commonLabels:
+  key1: value1
+  key2: value2
+```
+
+This is deprecated, and now it is recommended to use `labels` with a different structure:
+
+```yaml
+labels:
+- includeSelectors: true
+  pairs:
+    key1: value1
+    key2: value2
+```

@@ -10,8 +10,10 @@ For the third week’s exercises the following steps must be done before the sta
   * Do not forget to add it to the PATH - the name of the executable must be `kind`
   * You do not have to create a cluster - we will create one by our own rules
 * Install the helm CLI tool and add it to the PATH
-  * Follow one of the instructions listed here that seems good for you: https://helm.sh/docs/intro/install/
-  * The first option, release binaries can be the simplest way if you do not have any package managers: https://helm.sh/docs/intro/install/#from-the-binary-releases
+  * Note that there is currently an ongoing change from v3 to v4 in Helm. The course is created with v3 in mind, and until it is not confirmed, that v4 does not break anything, it is recommended to use v3 Helm (the links provided here will provide this).
+  * Follow one of the instructions listed here that seems good for you: https://helm.sh/docs/v3/intro/install
+  * The first option, release binaries can be the simplest way if you do not have any package managers: https://helm.sh/docs/v3/intro/install#from-the-binary-releases
+  * The last v3 release is this: https://github.com/helm/helm/releases/tag/v3.19.2
   * Do not forget to add it to the PATH - the name of the executable must be `helm`
 * You have to add three entries to your hosts file (see below for help about this)
   * `127.0.0.1 application.cubix.localhost`
@@ -31,7 +33,7 @@ For the third week’s exercises the following steps must be done before the sta
   * You should get a line something like this: `kind v0.17.0 go1.19.3 windows/amd64` (the version may differ)
   * If this fails, it means your kind installation is not correct, or kind is not added to the PATH
 * Enter the following command: `helm version`
-  * You should get a line which starts with `version.BuildInfo`
+  * You should get a line which starts with `version.BuildInfo`. It should be a version number starting with `v3` (the release I linked should have `v3.19.2`)
   * If this fails, it means your helm installation is not correct, or helm is not added to the PATH
 * Check the contents of the hosts file
   * On Windows (with PowerShell): `cat C:\Windows\System32\drivers\etc\hosts`
@@ -83,7 +85,7 @@ How to modify the PATH on your machine:
 Versions can be important for Kubernetes related executables. Here are the versions that I used last time, as a reference.
 Even if it is different from what you may have downloaded, hopefully there will not be any problems.
 
-* Kubectl (comes from Docker Desktop) (`kubectl version --client`): Client Version: v1.29.1
-* Built-in Kustomize (comes from `kubectl`) (`kubectl version --client`): Kustomize Version: v5.0.4-0.20230601165947-6ce0bf390ce3
-* Kind (`kind version`): kind v0.22.0 go1.20.13
-* Helm (`helm version`): version.BuildInfo{Version:"v3.14.2", GitCommit:"c309b6f0ff63856811846ce18f3bdc93d2b4d54b", GitTreeState:"clean", GoVersion:"go1.21.7"}
+* Kubectl (comes from Docker Desktop) (`kubectl version --client`): Client Version: v1.34.2
+* Built-in Kustomize (comes from `kubectl`) (`kubectl version --client`): Kustomize Version: v5.7.1
+* Kind (`kind version`): kind v0.30.0 go1.24.6
+* Helm (`helm version`): version.BuildInfo{Version:"v3.19.2", GitCommit:"8766e718a0119851f10ddbe4577593a45fadf544", GitTreeState:"clean", GoVersion:"go1.24.9"}
