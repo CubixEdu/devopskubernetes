@@ -16,7 +16,9 @@ For the first and second week’s exercises the following steps must be done bef
 * Add JAVA_HOME as a global level environment variable pointing to the Java installation folder (<path of the installation>)
 * Install Docker, recommended to have Docker Desktop (https://www.docker.com/products/docker-desktop/)
   * On Windows WSL2 is the recommended virtualization technology (Docker will help installing it)
-* Add the docker command-line tool to the PATH if it was not done by the installer
+  * If you install it not with Docker Desktop, you have to manually install `docker-compose` too
+  * Optionally, you can use Podman and `podman-compose`, see `podman-differences.md` file - note, that it may have issues and you might need to look up solutions for running it
+* Add the `docker` (and `docker-compose`) command-line tool to the PATH if it was not done by the installer
   * The folder to add: <path of the installation>/Docker/resources/bin
 * Have a command-line / terminal that is comfortable for you ready
   * On Windows it is highly recommend to use PowerShell instead of the conventional cmd tool
@@ -28,7 +30,7 @@ The training's materials were created in a way that you will not need any specia
 However I do recommend using Visual Studio Code (https://code.visualstudio.com/), as it is can give you hints, linting and tips for the files that we will edit.
 
 Recommended extensions for VS Code are:
-* Docker
+* Container Tools
 * Kubernetes (it will install YAML also)
 
 # Enable running PowerShell scripts on Windows
