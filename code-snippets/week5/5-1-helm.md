@@ -36,6 +36,15 @@ https://github.com/bitnami/charts/tree/main/bitnami/postgresql/
 
 This is required, as old Bitnami images have been migrated.
 
+Values snippet before using the Chart as a dependency:
+
+```yaml
+image:
+  repository: bitnamilegacy/postgresql
+```
+
+Values snippet after using the Chart as a dependency:
+
 ```yaml
 postgresql:
   image:
