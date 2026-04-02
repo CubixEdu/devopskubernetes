@@ -9,7 +9,7 @@ not the one from which you forked!
 
 ```yaml
     - name: Upload artifact for Docker job
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: java-app
         path: '${{ github.workspace }}/target/*.jar'
@@ -19,7 +19,7 @@ not the one from which you forked!
 
 ```yaml
     - name: Download artifact from maven job
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: java-app
 ```
