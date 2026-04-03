@@ -26,7 +26,7 @@ We must pass the JAR between the jobs. Have these:
 
 ```yaml
     - name: Upload artifact for Docker job
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: java-app
         path: '${{ github.workspace }}/target/*.jar'
@@ -34,7 +34,7 @@ We must pass the JAR between the jobs. Have these:
 
 ```yaml
     - name: Download artifact from maven job
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: java-app
 ```
