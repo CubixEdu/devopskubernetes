@@ -1,5 +1,5 @@
 # Requirements
-For the first and second week’s exercises the following steps must be done before the start:
+For the first and second week's exercises the following steps must be done before the start:
 * Only on Windows, you have to enable running PowerShell scripts - see below for a detailed description, how to do this
 * Install Postman (https://www.postman.com/downloads/) if you have no problem registering to their service
   * Otherwise I recommend using Bruno (https://www.usebruno.com/downloads), which does not require registration - about its usage, see the video
@@ -10,7 +10,8 @@ For the first and second week’s exercises the following steps must be done bef
 * Install a Git graphical user interface - recommended one is GitHub Desktop, as I will use that during the exercises (https://desktop.github.com/)
   * Note that GitHub Desktop is only available on Windows and MacOS, for Linux you will have to choose a different GUI, see: https://git-scm.com/downloads/guis
   * With GitHub Desktop you can log in to your GitHub account, making authentication easier
-* Install Java Development Kit 21 (higher is not recommended) (https://adoptium.net/download/)
+* Install Java Development Kit 25 (higher is not recommended)
+  * One good distribution is Temurin: https://adoptium.net/temurin/releases?version=25&os=any&arch=any
 * Add the java command-line tool to the PATH if it was not done by the installer
   * The folder to add: <path of the installation>/bin
 * Add JAVA_HOME as a global level environment variable pointing to the Java installation folder (<path of the installation>)
@@ -18,6 +19,7 @@ For the first and second week’s exercises the following steps must be done bef
   * On Windows WSL2 is the recommended virtualization technology (Docker will help installing it)
   * If you install it not with Docker Desktop, you have to manually install `docker-compose` too
   * Optionally, you can use Podman and `podman-compose`, see `podman-differences.md` file - note, that it may have issues and you might need to look up solutions for running it
+    * To ensure compatibility with existing scripts that use `docker`, see https://podman-desktop.io/docs/migrating-from-docker/aliasing-the-docker-cli
 * Add the `docker` (and `docker-compose`) command-line tool to the PATH if it was not done by the installer
   * The folder to add: <path of the installation>/Docker/resources/bin
 * Have a command-line / terminal that is comfortable for you ready
@@ -68,7 +70,7 @@ These steps should be done by you before starting the exercises - if these will 
 * Create a folder where you will work.
 * Enter a terminal / command-line prompt to that folder
 * Enter the following command: `java -version`
-  * It should return something like this: `openjdk version "21.0.2" 2024-01-16 LTS` what matters is that it does not show any error, and the first number in the version starts with 21 (or higher)
+  * It should return something like this: `openjdk 25.0.5 2026-10-20 LTS` what matters is that it does not show any error, and the first number in the version starts with 25 (or higher)
   * If this fails, it means your Java installation is not correct, or java is not added to the PATH
 * Enter the following command: `git clone https://github.com/drsylent/cubix-cloudnative-example-springboot`
   * It should not show any errors

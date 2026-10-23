@@ -1,5 +1,5 @@
 # Requirements
-For the sixth week’s exercises the following steps must be done before the start:
+For the sixth week's exercises the following steps must be done before the start:
 * It is required to still have the same hosts file setting as previously
 * Delete the previous Kubernetes cluster with: `kind delete cluster`
   * We do this so we have a clean, fresh state
