@@ -1,5 +1,5 @@
 # Requirements
-For the third week’s exercises the following steps must be done before the start:
+For the third week's exercises the following steps must be done before the start:
 * Install the kubectl CLI tool and add it to the PATH
   * If you installed Docker Desktop on Windows or MacOS, probably you already have it installed and added to the PATH - see check section to see if this is the case for you
   * If not, you can download it from here: https://kubernetes.io/docs/tasks/tools/#kubectl - follow the instructions for your operating system
@@ -10,10 +10,9 @@ For the third week’s exercises the following steps must be done before the sta
   * Do not forget to add it to the PATH - the name of the executable must be `kind`
   * You do not have to create a cluster - we will create one by our own rules
 * Install the helm CLI tool and add it to the PATH
-  * Note that there is currently an ongoing change from v3 to v4 in Helm. The course is created with v3 in mind, and until it is not confirmed, that v4 does not break anything, it is recommended to use v3 Helm (the links provided here will provide this).
-  * Follow one of the instructions listed here that seems good for you: https://helm.sh/docs/v3/intro/install
-  * The first option, release binaries can be the simplest way if you do not have any package managers: https://helm.sh/docs/v3/intro/install#from-the-binary-releases
-  * The last v3 release is this: https://github.com/helm/helm/releases/tag/v3.19.2
+  * Note that there is currently an ongoing change from v3 to v4 in Helm. The course is created with v3 in mind, but v4 supports all the features as used previously, so this will not be a problem.
+  * Follow one of the instructions listed here that seems good for you: https://helm.sh/docs/intro/install
+  * The first option, release binaries can be the simplest way if you do not have any package managers.
   * Do not forget to add it to the PATH - the name of the executable must be `helm`
 * You have to add three entries to your hosts file (see below for help about this)
   * `127.0.0.1 application.cubix.localhost`
@@ -30,10 +29,10 @@ For the third week’s exercises the following steps must be done before the sta
   * You should get a few lines of information, including a `Client version` and a `Kustomize version`
   * If this fails, it means your kubectl installation is not correct, or kubectl is not added to the PATH
 * Enter the following command: `kind version`
-  * You should get a line something like this: `kind v0.17.0 go1.19.3 windows/amd64` (the version may differ)
+  * You should get a line something like this: `kind v0.33.0 go1.26.7 linux/amd64` (the version may differ)
   * If this fails, it means your kind installation is not correct, or kind is not added to the PATH
 * Enter the following command: `helm version`
-  * You should get a line which starts with `version.BuildInfo`. It should be a version number starting with `v3` (the release I linked should have `v3.19.2`)
+  * You should get a line which starts with `version.BuildInfo`.
   * If this fails, it means your helm installation is not correct, or helm is not added to the PATH
 * Check the contents of the hosts file
   * On Windows (with PowerShell): `cat C:\Windows\System32\drivers\etc\hosts`
@@ -85,7 +84,7 @@ How to modify the PATH on your machine:
 Versions can be important for Kubernetes related executables. Here are the versions that I used last time, as a reference.
 Even if it is different from what you may have downloaded, hopefully there will not be any problems.
 
-* Kubectl (comes from Docker Desktop) (`kubectl version --client`): Client Version: v1.34.2
-* Built-in Kustomize (comes from `kubectl`) (`kubectl version --client`): Kustomize Version: v5.7.1
-* Kind (`kind version`): kind v0.30.0 go1.24.6
-* Helm (`helm version`): version.BuildInfo{Version:"v3.19.2", GitCommit:"8766e718a0119851f10ddbe4577593a45fadf544", GitTreeState:"clean", GoVersion:"go1.24.9"}
+* Kubectl (comes from Docker Desktop) (`kubectl version --client`): Client Version: v1.37.1
+* Built-in Kustomize (comes from `kubectl`) (`kubectl version --client`): Kustomize Version: v5.8.1
+* Kind (`kind version`): kind v0.33.0 go1.26.7 linux/amd64
+* Helm (`helm version`): version.BuildInfo{Version:"v4.3.1", GitCommit:"c0d08d0d6d9424d4a14febb5e8a3e51b0dd00dff", GitTreeState:"clean", GoVersion:"go1.27.2", KubeClientVersion:"v1.37"}
