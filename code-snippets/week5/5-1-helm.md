@@ -58,7 +58,7 @@ image:
   repository: quay.io/drsylent/cloud-native-db-demo
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "springboot3"
+  tag: "springboot4"
 ```
 
 # Environment variables

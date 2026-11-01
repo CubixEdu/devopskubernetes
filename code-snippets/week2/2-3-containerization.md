@@ -25,7 +25,7 @@ ghcr.io/USERNAME/cubix/cloudnative/demo:actions
 # Spring Boot database example image
 
 ```
-quay.io/drsylent/cloud-native-db-demo:springboot3
+quay.io/drsylent/cloud-native-db-demo:springboot4
 ```
 
 # Database example URL

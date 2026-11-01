@@ -8,7 +8,7 @@ http://grafana.cubix.localhost:8080
         <dependency>
             <groupId>net.logstash.logback</groupId>
             <artifactId>logstash-logback-encoder</artifactId>
-            <version>7.4</version>
+            <version>9.0</version>
             <scope>runtime</scope>
         </dependency>
 ```
