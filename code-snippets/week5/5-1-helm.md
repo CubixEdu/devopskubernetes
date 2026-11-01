@@ -34,13 +34,17 @@ https://github.com/bitnami/charts/tree/main/bitnami/postgresql/
 
 # Configuring Bitnami image
 
+These will work with Chart version `14.3.3`.
+
 This is required, as old Bitnami images have been migrated.
 
 Values snippet before using the Chart as a dependency:
 
 ```yaml
 image:
-  repository: bitnamilegacy/postgresql
+  registry: docker.io
+  repository: postgres
+  tag: "18"
 ```
 
 Values snippet after using the Chart as a dependency:
@@ -48,7 +52,16 @@ Values snippet after using the Chart as a dependency:
 ```yaml
 postgresql:
   image:
-    repository: bitnamilegacy/postgresql
+    registry: docker.io
+    repository: postgres
+    tag: "18"
+```
+
+For maximum compatibility, if something is off, use:
+
+```yaml
+image:
+  repository: bitnamilegacy/postgresql
 ```
 
 # DB image values
@@ -58,7 +71,7 @@ image:
   repository: quay.io/drsylent/cloud-native-db-demo
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "springboot3"
+  tag: "springboot4"
 ```
 
 # Environment variables

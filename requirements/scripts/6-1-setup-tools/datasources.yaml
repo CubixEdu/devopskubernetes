@@ -11,7 +11,7 @@ datasources:
     type: loki
     uid: cubix_loki
     access: proxy
-    url: http://loki:3100
+    url: http://loki-gateway.tools.svc.cluster.local:80
     jsonData:
       derivedFields:
         - datasourceUid: cubix_tempo
@@ -28,7 +28,7 @@ datasources:
     type: tempo
     uid: cubix_tempo
     access: proxy
-    url: http://tempo:3100
+    url: http://tempo:3200
     jsonData:
       tracesToLogsV2:
         datasourceUid: cubix_loki

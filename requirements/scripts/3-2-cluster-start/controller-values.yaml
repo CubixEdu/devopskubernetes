@@ -1,0 +1,11 @@
+controller:
+  hostNetwork: true
+  dnsPolicy: ClusterFirstWithHostNet
+
+  service:
+    type: ClusterIP
+
+  ingressClass:
+    name: nginx
+    create: true
+    setAsDefaultIngress: true

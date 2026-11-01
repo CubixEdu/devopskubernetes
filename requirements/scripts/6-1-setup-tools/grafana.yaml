@@ -15,7 +15,9 @@ admin:
 sidecar:
   datasources:
     enabled: true
+    label: grafana_datasource
     initDatasources: true
     skipReload: true
+    watchMethod: LIST
 serviceAccount:
-  autoMount: true
+  automountServiceAccountToken: true

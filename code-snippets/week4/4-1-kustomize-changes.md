@@ -3,11 +3,10 @@
 Since the recording of the practice exercise, 
 some features have changed in Kustomize.
 
-The version I have currently (bundled in kubectl, with Docker Desktop):
+The version I have currently (bundled in kubectl):
 
 ```
-Client Version: v1.28.2
-Kustomize Version: v5.0.4-0.20230601165947-6ce0bf390ce3
+Kustomize Version: v5.8.1
 ```
 
 You can check it with `kubectl version --client`.
