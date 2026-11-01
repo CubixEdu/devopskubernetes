@@ -26,7 +26,7 @@ We must pass the JAR between the jobs. Have these:
 
 ```yaml
     - name: Upload artifact for Docker job
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: java-app
         path: '${{ github.workspace }}/target/*.jar'
@@ -34,7 +34,7 @@ We must pass the JAR between the jobs. Have these:
 
 ```yaml
     - name: Download artifact from maven job
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@v8
       with:
         name: java-app
 ```
@@ -48,6 +48,21 @@ Then create the Docker commands. docker-publish-help.txt file has helping comman
       run: docker build . --file Dockerfile --tag ghcr.io/drsylent/cubix/cloudnative/demo:actions
     - name: Push the Docker image
       run: docker push ghcr.io/drsylent/cubix/cloudnative/demo:actions
+```
+
+## For ARM machines
+
+If you have an ARM machine, it is highly recommended, to do a multiplatform build, which enables building both ARM64 and AMD64 image building. If you don't do this and use an ARM based system, then the image will run slower (also you may need to install some compatibility layer).
+
+```yaml
+    - name: Docker login
+      run: docker login ghcr.io -u drsylent -p ${{ github.token }}
+    - name: Set up QEMU
+     uses: docker/setup-qemu-action@v4
+    - name: Set up Docker Buildx
+     uses: docker/setup-buildx-action@v4
+    - name: Build and push the Docker image
+     run: docker buildx build . --file Dockerfile --platform linux/amd64,linux/arm64 --tag ghcr.io/drsylent/cubix/cloudnative/demo:actions --push
 ```
 
 # Download the container, run it and test it

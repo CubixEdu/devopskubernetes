@@ -56,7 +56,7 @@ Update pom.xml:
         <dependency>
             <groupId>net.logstash.logback</groupId>
             <artifactId>logstash-logback-encoder</artifactId>
-            <version>7.3</version>
+            <version>9.0</version>
             <scope>runtime</scope>
         </dependency>
 ```

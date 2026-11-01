@@ -63,7 +63,9 @@ auth:
   password: password
   database: postgres
 image:
-    repository: bitnamilegacy/postgresql
+  registry: docker.io
+  repository: postgres
+  tag: "18"
 ```
 
 Create a dedicated namespace for the database: `kubectl create namespace helm-db`
@@ -89,7 +91,7 @@ image:
   repository: quay.io/drsylent/cloud-native-db-demo
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "springboot3"
+  tag: "springboot4"
 ```
 
 Add environment variables to our Deployment:
@@ -291,7 +293,7 @@ Add the Postgres Chart as dependency to the Chart.yaml:
 ```yaml
 dependencies:
 - name: postgresql
-  version: "12.1.9"
+  version: "14.3.3"
   repository: "https://charts.bitnami.com/bitnami"  
 ```
 
@@ -306,7 +308,9 @@ postgresql:
     password: password
     database: postgres
   image:
-    repository: bitnamilegacy/postgresql
+    registry: docker.io
+    repository: postgres
+    tag: "18"
 ```
 
 The deployment.yaml must be modified, we will not have the db values, 

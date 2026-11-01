@@ -51,7 +51,7 @@ Will use a network - in this, name-resolving is available
 docker network create cloud-native-demo
 docker run --name postgres `
   -e POSTGRES_USER=user -e POSTGRES_PASSWORD=password `
-  --network cloud-native-demo -d --rm postgres:15.3
+  --network cloud-native-demo -d --rm postgres:17
 ```
 
 Start the Spring Boot application
@@ -59,7 +59,7 @@ Start the Spring Boot application
 ```shell
 docker run -p 8080:8080 `
   -e SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/postgres -e SPRING_DATASOURCE_USERNAME=user -e SPRING_DATASOURCE_PASSWORD=password `
-  --network cloud-native-demo -it --rm quay.io/drsylent/cloud-native-db-demo:springboot3
+  --network cloud-native-demo -it --rm quay.io/drsylent/cloud-native-db-demo:springboot4
 ```
 
 Call: http://localhost:8080/visit -> with each call the number will increase
@@ -81,7 +81,7 @@ docker volume create cloud-native-demo
 docker run --name postgres `
   -e POSTGRES_USER=user -e POSTGRES_PASSWORD=password `
   --network cloud-native-demo -d --rm `
-  --mount type=volume,source=cloud-native-demo,destination=/var/lib/postgresql/data postgres:15.3
+  --mount type=volume,source=cloud-native-demo,destination=/var/lib/postgresql/data postgres:17
 ```
 
 Start Spring Boot, call URL
@@ -102,7 +102,7 @@ Compose is useful as we can set up multiple containers easily through one descri
 ```yaml
 services:
   postgres:
-    image: postgres:15.3
+    image: postgres:17
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
@@ -110,7 +110,7 @@ services:
     - "cloud-native-demo:/var/lib/postgresql/data"
 
   application:
-    image: quay.io/drsylent/cloud-native-db-demo:springboot3
+    image: quay.io/drsylent/cloud-native-db-demo:springboot4
     ports:
       - 8080:8080
     environment:
@@ -135,7 +135,7 @@ BEFOREHAND: change the line endings for Linux.
 Dockerfile-multistage should be based on the Dockerfile-aftermaven:
 
 ```Dockerfile
-FROM eclipse-temurin:21 AS builder
+FROM eclipse-temurin:25 AS builder
 
 RUN mkdir /opt/build
 WORKDIR /opt/build
@@ -145,7 +145,7 @@ COPY mvnw .
 COPY pom.xml .
 RUN ./mvnw clean verify
 
-FROM eclipse-temurin:21-jre
+FROM eclipse-temurin:25-jre
 RUN mkdir /opt/app && chown 1001 -R /opt/app
 USER 1001
 WORKDIR /opt/app

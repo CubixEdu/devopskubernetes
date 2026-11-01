@@ -7,7 +7,7 @@ For that we will need a Java agent that will be attached to our running process.
 Modify the API application's Docker image:
 
 ```Dockerfile
-ADD --chown=1001 https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/download/v1.20.2/opentelemetry-javaagent.jar opentelemetry.jar
+ADD --chown=1001 https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/download/v2.33.1/opentelemetry-javaagent.jar opentelemetry.jar
 COPY --chown=1001 target/*.jar app.jar
 ENTRYPOINT [ "sh", "-c" ]
 CMD ["exec java -javaagent:/opt/app/opentelemetry.jar $JAVA_OPTS -jar app.jar"]
