@@ -71,7 +71,7 @@ metadata:
   labels:
     app: nginx
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.org/rewrite-target: /
 spec:
   rules:
   - http:
