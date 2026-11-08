@@ -1,6 +1,11 @@
 controller:
   hostNetwork: true
   dnsPolicy: ClusterFirstWithHostNet
+  allowEmptyIngressHost: true
+  config:
+    entries:
+      ssl-redirect: "false"
+      redirect-to-https: "false"
 
   service:
     type: ClusterIP
